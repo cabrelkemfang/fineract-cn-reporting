@@ -73,6 +73,8 @@ public class AbstractReportingSpecificationTest extends SuiteTestEnvironment {
 
   static final String TEST_USER = "homer";
 
+  @ClassRule
+  public final static TenantDataStoreContextTestRule tenantDataStoreContext = TenantDataStoreContextTestRule.forRandomTenantName(cassandraInitializer, mariaDBInitializer);
 
   @Rule
   public final TenantApplicationSecurityEnvironmentTestRule tenantApplicationSecurityEnvironment
