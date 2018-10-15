@@ -73,17 +73,6 @@ public class AbstractReportingSpecificationTest extends SuiteTestEnvironment {
 
   static final String TEST_USER = "homer";
 
-  private final static TestEnvironment testEnvironment = new TestEnvironment(APP_NAME);
-  private final static CassandraInitializer cassandraInitializer = new CassandraInitializer();
-  private final static MariaDBInitializer mariaDBInitializer = new MariaDBInitializer();
-  final static TenantDataStoreContextTestRule tenantDataStoreContext = TenantDataStoreContextTestRule.forRandomTenantName(cassandraInitializer, mariaDBInitializer);
-
-  @ClassRule
-  public static TestRule orderClassRules = RuleChain
-      .outerRule(testEnvironment)
-      .around(cassandraInitializer)
-      .around(mariaDBInitializer)
-      .around(tenantDataStoreContext);
 
   @Rule
   public final TenantApplicationSecurityEnvironmentTestRule tenantApplicationSecurityEnvironment
